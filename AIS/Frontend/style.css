@@ -1,0 +1,64 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1,
+h2 {
+    color: #333;
+}
+
+button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Step Sections */
+.step {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+select,
+input {
+    padding: 10px;
+    margin: 5px;
+    width: calc(100% - 24px);
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Map Styling */
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#route-details {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}

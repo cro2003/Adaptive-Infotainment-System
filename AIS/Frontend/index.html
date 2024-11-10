@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Adaptive Infotainment System</title>
+        <link rel="stylesheet" href="style.css" />
+
+        <!-- Leaflet CSS and JavaScript for interactive maps -->
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    </head>
+    <body>
+        <div class="container" id="app-container">
+            <h1>Adaptive Infotainment System</h1>
+
+            <!-- Profile Selection -->
+            <div id="profile-selection" class="step">
+                <h2>Select Profile</h2>
+                <select id="profile" onchange="selectProfile()">
+                    <option value="">Choose a Profile</option>
+                    <option value="user1">User 1 - John Doe</option>
+                    <option value="user2">User 2 - Jane Smith</option>
+                </select>
+            </div>
+
+            <!-- Adjust Seat & Steering -->
+            <div id="adjust-settings" class="step" style="display: none">
+                <h2>Adjusting Seat & Steering Position</h2>
+                <p id="seat-steering-message"></p>
+                <button onclick="nextStep('music-suggestion'); suggestMusic();">
+                    Next
+                </button>
+            </div>
+
+            <!-- Suggest Music -->
+            <div id="music-suggestion" class="step" style="display: none">
+                <h2>Music Recommendation</h2>
+                <p id="suggested-music"></p>
+                <button
+                    onclick="nextStep('temperature-display'); displayTemperature();"
+                >
+                    Next
+                </button>
+            </div>
+
+            <!-- Display Temperature -->
+            <div id="temperature-display" class="step" style="display: none">
+                <h2>Current Temperature</h2>
+                <p id="temperature-info"></p>
+                <button onclick="nextStep('navigation-suggestion')">
+                    Next
+                </button>
+            </div>
+
+            <!-- Navigation Suggestion -->
+            <div id="navigation-suggestion" class="step" style="display: none">
+                <h2>Navigation</h2>
+                <p>Would you like to go to your frequently visited place?</p>
+                <button onclick="getRouteInfo()">Yes</button>
+                <!-- This should trigger getRouteInfo() -->
+                <button onclick="resetSystem()">No</button>
+            </div>
+
+            <!-- Route & Traffic Info -->
+            <div id="route-info" class="step" style="display: none">
+                <h2>Route Information</h2>
+                <p id="route-details"></p>
+                <button onclick="resetSystem()">Finish</button>
+                <!-- Map container for interactive route map -->
+                <div id="map" style="height: 400px; width: 100%"></div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
